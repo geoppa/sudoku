@@ -15,7 +15,6 @@ func main() {
 		}
 		return
 	}
-
 	var board [9][9]rune
 	for row, rowind := range myargs {
 		if len(rowind) != 9 {

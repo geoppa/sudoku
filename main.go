@@ -40,7 +40,7 @@ func main() {
 
 		// 5. Looks at every single cell in the row
 		for col, char := range rowind {
-			// If it finds anything that isn't a number (1-9) or a dot and stop everything
+			// If it finds anything that isn't a number (1-9) or a dot stops everything
 			if char != '.' && (char < '1' || char > '9') {
 				fmt.Print("ERROR: Found a weird character at column ", col+1)
 				return

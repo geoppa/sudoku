@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -27,7 +29,26 @@ func main() {
 			return
 		}
 		for col, char := range rowind {
+			if char != '.' && (char < '1' || char > '9') {
+				print("ERROR, not valid number in column ", col+1)
+				return
+			}
 			board[row][col] = char
 		}
 	}
+	print("\nUNSOLVED SUDOKU\n")
+	print("---------------\n")
+	for row := 0; row < 9; row++ {
+		for col := 0; col < 9; col++ {
+			fmt.Printf("%c", board[row][col])
+			if col < 8 {
+				fmt.Printf(" ")
+			}
+		}
+		fmt.Println()
+	}
+
+	print("---------------\n")
+	print("Press 'Enter' to solve it")
+	bufio.NewReader(os.Stdin).ReadBytes('\n')
 }

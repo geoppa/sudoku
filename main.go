@@ -51,4 +51,22 @@ func main() {
 	print("---------------\n")
 	print("Press 'Enter' to solve it")
 	bufio.NewReader(os.Stdin).ReadBytes('\n')
+
+	for i := 0; i < 9; i++ {
+		for j := 0; j < 9; j++ {
+			if board[i][j] == '.' {
+				board[i][j] = '*'
+			}
+		}
+	}
+	print("---------------\n")
+	for row := 0; row < 9; row++ {
+		for col := 0; col < 9; col++ {
+			fmt.Printf("%c", board[row][col])
+			if col < 8 {
+				fmt.Printf(" ")
+			}
+		}
+		fmt.Println()
+	}
 }

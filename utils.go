@@ -22,3 +22,32 @@ func PrintBoard(board [9][9]rune) {
 		fmt.Println()
 	}
 }
+
+// IsSafe: Scans the 3x3 grid and checks if num is in the grid
+func isSafe(board [9][9]rune, row, col int, num rune) bool {
+	// Loop that checks if num is in rows
+	for i := 0; i < 9; i++ {
+		if board[row][i] == num {
+			return false
+		}
+	}
+	// Loop that checks if num is in cols
+	for i := 0; i < 9; i++ {
+		if board[i][col] == num {
+			return false
+		}
+	}
+	// Find the top right corner of the 3x3 grid
+	startRow := (row / 3) * 3
+	startCol := (col / 3) * 3
+
+	// Loop that checks if num is in the 3x3 grid
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			if board[i+startRow][j+startCol] == num {
+				return false
+			}
+		}
+	}
+	return true
+}

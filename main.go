@@ -26,7 +26,6 @@ func main() {
 
 	// 4. Starts reading the rows one by one
 	for row, rowind := range myargs {
-
 		// Checks if each row is exactly 9 characters long
 		if len(rowind) != 9 {
 			dif2 := 9 - len(rowind)

@@ -20,6 +20,7 @@ func PrintBoard(board [9][9]rune) {
 		}
 		// 6. After finishing a row, move to the next line
 		fmt.Println()
+
 	}
 }
 
